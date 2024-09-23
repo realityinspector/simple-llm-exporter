@@ -1,7 +1,12 @@
 # simple-llm-exporter
 a tool to export entire scripts to a text file with a file tree and description, for exporting to llm's 
-# python export.py --export-options 2,1,1,all --recent 90
-# python export.py --export-options 0,1,0 --map-functions
+
+quick intro: use this command to export all files (determined by config in code)  that have been modified in the last 90 minutes, with a tree of the app, no description
+
+```bash python export.py --export-options 2,1,1,all --recent 90```
+
+Or this to export all functions in a tree. 
+```bashpython export.py --export-options 0,1,0 --map-functions```
 
 ## Overview
 The export.py script allows users to export selected files from a Flask project based on certain criteria like file types, modification time, and structure mapping. It can also map Python and JavaScript functions, classes, and methods for easier navigation. The output is stored in a text file, organized into sections like a project description, file tree, and content from specific file types.
