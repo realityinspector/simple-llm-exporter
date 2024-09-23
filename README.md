@@ -17,6 +17,7 @@ The script supports several command line arguments to control what gets exported
 Export with default options:
 ```bash
 python export.py
+```
 
 This will:
 
@@ -30,7 +31,7 @@ Output is stored in ./backups/exported_files_<timestamp>.txt.
 ### Export Options 
 The --export-options flag allows you to control what gets exported.
 Syntax:
-bashCopy--export-options <description>,<tree>,<file-types>,<specific-files>
+```bashCopy--export-options <description>,<tree>,<file-types>,<specific-files>```
 Each value is either 0 (disable) or 1 (enable). For example:
 
 1,1,1,all: Export description, file tree, and all file types.
@@ -38,9 +39,9 @@ Each value is either 0 (disable) or 1 (enable). For example:
 
 Example 1: Export specific file types
 Export project structure and only Python and JSON files:
-bashCopypython export.py --export-options 0,1,0,py,json
+```bashCopypython export.py --export-options 0,1,0,py,json```
 Example 2: Full export with all file types
-bashCopypython export.py --export-options 1,1,1,all
+```bashCopypython export.py --export-options 1,1,1,all```
 This exports:
 
 Project description
@@ -50,11 +51,11 @@ All file types
 ###  Filtering by Recent Files
 The --recent flag restricts the export to files modified in the last N minutes.
 Example: Export files modified in the last 90 minutes
-bashCopypython export.py --recent 90
+```bashCopypython export.py --recent 90```
 Mapping Functions, Classes, and Methods
 The --map-functions flag maps Python and JavaScript functions, classes, and methods in the export.
 Example: Export with function and method mapping
-bashCopypython export.py --map-functions
+```bashCopypython export.py --map-functions```
 This will include a hierarchical view of functions, classes, and methods in Python and JavaScript files in the exported tree.
 Output
 The exported output file will include:
@@ -69,14 +70,14 @@ Example Commands
 
 Export the entire project tree with a description and all file types:
 
-bashCopypython export.py --export-options 1,1,1,all
+```bashCopypython export.py --export-options 1,1,1,all```
 
 Export only Python and Markdown files from the last 60 minutes with function mapping:
 
-bashCopypython export.py --export-options 0,1,0,py,md --recent 60 --map-functions
+```bashCopypython export.py --export-options 0,1,0,py,md --recent 60 --map-functions```
 
 Export project description and structure without file content:
 
-bashCopypython export.py --export-options 1,1,0
+```bashCopypython export.py --export-options 1,1,0```
 Conclusion
 Use this script to easily export and map project files based on your needs. Customize the export options to filter by file type, time of last modification, or include a structured view of functions and methods in Python and JavaScript files.
