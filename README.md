@@ -69,6 +69,11 @@ The exported output file will include:
 File Tree (if enabled)
 File Content (if enabled), with sections for each file type or all files based on your options.
 
+### Sub Folders 
+You can export only specific subfolders / extensions using specific-path: 
+
+ ```bash python export.py --specific-path "app/models/*.py" --export-options 2,1,1,all ```
+
 ### Logs
 The script will attempt to include the most recent log file from the logs/ directory if it exists. The log file must follow the naming pattern log_<timestamp>.txt.
 Example Commands
