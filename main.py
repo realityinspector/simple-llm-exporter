@@ -188,8 +188,8 @@ class FileExporter:
 
 def main():
     parser = argparse.ArgumentParser(description='Export selected files to an output file.')
-    parser.add_argument('-o', '--output', default='./backups/exported_files.txt',
-                        help='Output filepath (default: ./backups/exported_files.txt)')
+    parser.add_argument('-o', '--output', default='./exports/exported_files.txt',
+                        help='Output filepath (default: ./exports/exported_files.txt)')
     parser.add_argument('--export-options', default='1,1,1,all',
                         help='Export options (default: 1,1,1,all)')
     parser.add_argument('--recent', type=int, default=None,
@@ -204,7 +204,7 @@ def main():
     base_output = os.path.splitext(args.output)[0]
     output_file = f"{base_output}_{timestamp}.txt"
 
-    os.makedirs('./backups', exist_ok=True)
+    os.makedirs('./exports', exist_ok=True)
 
     exporter = FileExporter(
         output_file,
